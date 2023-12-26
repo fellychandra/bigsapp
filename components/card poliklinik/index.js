@@ -9,11 +9,11 @@ const Card = ({ data }) => {
     ];
     return (
         <>
-            <div className='flex w-full h-[156px] p-2 bg-primary1/20 rounded-[5px] items-center justify-center'>
+            <Link href={'/beranda/poliklinik/dokter'} className='flex w-full h-[156px] p-2 bg-primary1/20 rounded-[5px] items-center justify-center cursor-pointer'>
                 <div className=''>
                     Poliklinik
                 </div>
-            </div>
+            </Link>
         </>
     )
 }

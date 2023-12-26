@@ -6,13 +6,13 @@ import React from 'react';
 const Navigasi = () => {
     const pathName = usePathname();
     const isActive = (href) => {
-        return pathName.includes(href) ? 'text-primary fill-inherit' : 'text-abuabu';
+        return pathName.includes(href) ? 'text-primary1 fill-inherit' : 'text-abuabu';
     };
     console.log(pathName);
 
     return (
         <div className='custom-shadow'>
-            <nav className="fixed bottom-0 left-0 right-0 bg-white h-14 pt-2">
+            <nav className="fixed bottom-0 left-0 right-0 bg-white h-16 pt-2">
                 <div className="max-w-7xl  mx-auto px-4">
                     <ul className="flex justify-around sm:">
                         <li className='text-center'>

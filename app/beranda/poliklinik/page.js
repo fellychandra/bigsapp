@@ -9,9 +9,9 @@ const Poliklinik = () => {
     <>
       <div className='px-2'>
         <section className='mt-5'>
-          <Link href={'/beranda'} className='flex items-center font-bold poin'>
-            <CaretLeft size={26} />
-            <div>
+          <Link href={'/beranda'} className='flex items-center p-1 font-bold text-base gap-1'>
+            <CaretLeft size={18} weight='bold' />
+            <div className=''>
               Poliklinik
             </div>
           </Link>
@@ -31,7 +31,7 @@ const Poliklinik = () => {
         </section>
         <section className='px-2'>
           <div className='w-full h-full rounded-[5px] shadow-custom p-2'>
-            <div className='grid grid-cols-2 gap-3 place-items-center justify-center overflow-y-auto' style={{ maxHeight: 'calc(100vh - 200px)' }} >
+            <div className='grid grid-cols-2 gap-3 place-items-center justify-center overflow-y-auto scrollbar-hide' style={{ maxHeight: 'calc(100vh - 215px)' }} >
               <Card data={""} />
               <Card data={""} />
               <Card data={""} />
