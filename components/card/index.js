@@ -12,8 +12,8 @@ const Card = ({ style, data }) => {
                 <div style={{ backgroundImage: `url(${slides[0].url})` }} className='rounded-full w-12 h-12 bg-center bg-cover flex justify-center'>
                 </div>
                 <div className='items-center ml-3'>
-                    <div className='font-bold text-[10px] overflow-hidden'>dr. Felly Chandra Ganteng Kali </div>
-                    <div className='text-abutext font-normal text-[10px] overflow-hidden'>Klinik jaya abadi </div>
+                    <div className='font-bold text-sm overflow-hidden'>dr. Felly Chandra Ganteng Kali </div>
+                    <div className='text-abutext font-normal text-[11px] overflow-hidden'>Klinik jaya abadi </div>
                 </div>
             </div>
         </>
