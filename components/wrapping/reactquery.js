@@ -2,6 +2,7 @@
 import React, { ReactNode, Suspense } from 'react';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import Navigasi from '@/components/navigation';
+import Loading from '@/components/loading';
 
 
 
@@ -16,10 +17,10 @@ const queryClient = new QueryClient({
 function ReactQueryWrapper({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <Suspense fallback={<Loading />}> */}
-      {/* <Header /> */}
-      {children}
-      {/* </Suspense> */}
+      <Suspense fallback={<Loading />}>
+        {/* <Header /> */}
+        {children}
+      </Suspense>
       <Navigasi />
     </QueryClientProvider>
   );

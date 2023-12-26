@@ -8,7 +8,6 @@ const Navigasi = () => {
     const isActive = (href) => {
         return pathName.includes(href) ? 'text-primary1 fill-inherit' : 'text-abuabu';
     };
-    console.log(pathName);
 
     return (
         <div className='custom-shadow'>
@@ -17,7 +16,7 @@ const Navigasi = () => {
                     <ul className="flex justify-around sm:">
                         <li className='text-center'>
                             <Link href="/beranda">
-                                <div className={`hover:text-accentprimary text-xs ${isActive('/beranda')} flex flex-col items-center justify-center`}>
+                                <div className={`text-xs ${isActive('/beranda')} flex flex-col items-center justify-center`}>
                                     <House size={29} />
                                     <h4>Beranda</h4>
                                 </div>
@@ -25,7 +24,7 @@ const Navigasi = () => {
                         </li>
                         <li className='text-center justify-center'>
                             <Link href="/status-perjanjian">
-                                <div className={`hover:text-accentprimary text-xs ${isActive('/status-perjanjian')} flex flex-col items-center justify-center`}>
+                                <div className={`text-xs ${isActive('/status-perjanjian')} flex flex-col items-center justify-center`}>
                                     <ClipboardText size={29} />
                                     <h4>Perjanjian</h4>
                                 </div>
@@ -33,7 +32,7 @@ const Navigasi = () => {
                         </li>
                         <li className='text-center justify-center'>
                             <Link href="/riwayat">
-                                <div className={`hover:text-accentprimary text-xs ${isActive('/riwayat')} flex flex-col items-center justify-center`}>
+                                <div className={`text-xs ${isActive('/riwayat')} flex flex-col items-center justify-center`}>
                                     <BookOpenText size={29} />
                                     <h4>Riwayat</h4>
                                 </div>
@@ -41,7 +40,7 @@ const Navigasi = () => {
                         </li>
                         <li className='text-center justify-center'>
                             <Link href="/profile">
-                                <div className={`hover:text-accentprimary text-xs ${isActive('/profile')} flex flex-col items-center justify-center`}>
+                                <div className={`text-xs ${isActive('/profile')} flex flex-col items-center justify-center`}>
                                     <User size={29} />
                                     <h4>Profil</h4>
                                 </div>

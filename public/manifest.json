@@ -1,7 +1,7 @@
 {
-  "short_name": "BPWA",
-  "name": "NEXT PWA",
-  "description": "Belajar PWA NEXT JS",
+  "short_name": "BIGS APP",
+  "name": "BIGS APP",
+  "description": "BIGS APP untuk Doctor Appointment",
   "icons": [
     {
       "src": "/icons/icon-36x36.png",
