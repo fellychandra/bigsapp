@@ -1,4 +1,28 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
 
-module.exports = nextConfig
+
+const prod = process.env.NODE_ENV === 'production'
+
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                hostname: "res.cloudinary.com"
+            }
+        ]
+    },
+    reactStrictMode: true,
+    swcMinify: true,
+    compiler: {
+        removeConsole: process.env.NODE_ENV !== 'development',
+    },
+}
+
+const withPWA = require('next-pwa')({
+    dest: 'public',
+    disable: process.env.NODE_ENV === 'development',
+    register: true,
+})
+
+
+module.exports = withPWA(nextConfig)
