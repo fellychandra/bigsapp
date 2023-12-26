@@ -8,7 +8,7 @@ const Poliklinik = () => {
   return (
     <>
       <div className='px-2'>
-        <section className='pt-3'>
+        <section className='mt-5'>
           <Link href={'/beranda'} className='flex items-center font-bold poin'>
             <CaretLeft size={26} />
             <div>
@@ -16,7 +16,7 @@ const Poliklinik = () => {
             </div>
           </Link>
         </section>
-        <section className='p-2'>
+        <section className='m-2 mt-4'>
           <div className='w-full'>
             <div className='flex w-full h-[53px] bg-white rounded-[5px] items-center shadow-custom'>
               <div className="p-3 w-full text-abuabu font-normal text-[12px]">
@@ -30,8 +30,12 @@ const Poliklinik = () => {
           </div>
         </section>
         <section className='px-2'>
-          <div className='w-full h-full rounded-[5px] shadow-custom'>
-            <div className='grid grid-cols-2 gap-3 place-items-center justify-center p-2 overflow-y-auto' style={{ maxHeight: 'calc(100vh - 170px)' }} >
+          <div className='w-full h-full rounded-[5px] shadow-custom p-2'>
+            <div className='grid grid-cols-2 gap-3 place-items-center justify-center overflow-y-auto' style={{ maxHeight: 'calc(100vh - 200px)' }} >
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
               <Card data={""} />
               <Card data={""} />
               <Card data={""} />

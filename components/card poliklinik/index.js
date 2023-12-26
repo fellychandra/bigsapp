@@ -9,9 +9,9 @@ const Card = ({ data }) => {
     ];
     return (
         <>
-            <div className='flex w-full h-[156px] p-2 bg-slate-500 rounded-[5px] items-center justify-center'>
+            <div className='flex w-full h-[156px] p-2 bg-primary1/20 rounded-[5px] items-center justify-center'>
                 <div className=''>
-                    items-center
+                    Poliklinik
                 </div>
             </div>
         </>
