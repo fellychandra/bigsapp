@@ -29,20 +29,22 @@ const Poliklinik = () => {
             </div>
           </div>
         </section>
-        <section className='p-2 overflow-y-auto' style={{ maxHeight: 'calc(100vh - 160px)' }}>
-          <div className='grid grid-cols-2 gap-3 place-items-center justify-center p-2 w-full h-full rounded-[5px] shadow-custom '>
-            <Card data={""} />
-            <Card data={""} />
-            <Card data={""} />
-            <Card data={""} />
-            <Card data={""} />
-            <Card data={""} />
-            <Card data={""} />
-            <Card data={""} />
-            <Card data={""} />
-            <Card data={""} />
-            <Card data={""} />
-            <Card data={""} />
+        <section className='px-2'>
+          <div className='w-full h-full rounded-[5px] shadow-custom'>
+            <div className='grid grid-cols-2 gap-3 place-items-center justify-center p-2 overflow-y-auto' style={{ maxHeight: 'calc(100vh - 170px)' }} >
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+              <Card data={""} />
+            </div>
           </div>
         </section>
       </div>
