@@ -23,7 +23,7 @@ export default function Beranda() {
                         </div>
                     </div>
                 </section>
-                <section>
+                <section className='mb-14'>
                     <div className='py-2'>
                         <div className='text-sm font-bold'>Dokter Tersedia</div>
                         <div className='grid grid-cols-1 gap-3'>
