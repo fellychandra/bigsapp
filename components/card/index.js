@@ -24,8 +24,8 @@ const Card = ({ style, data }) => {
                 {
                     pathName.includes('dokter') && (
                         <div className='flex justify-between pt-2'>
-                            <div className='bg-primary1 p-1 rounded-[5px] font-normal text-[12px] text-white'>Lihat Jadwal</div>
-                            <div className='bg-primary1 p-1 rounded-[5px] font-normal text-[12px] text-white'>Buat Janji</div>
+                            <div className='bg-primary1 p-1 w-[5rem] text-center rounded-[5px] font-normal text-[12px] text-white'>Lihat Jadwal</div>
+                            <div className='bg-primary1 p-1 w-[5rem] text-center rounded-[5px] font-normal text-[12px] text-white'>Buat Janji</div>
                         </div>
                     )
                 }
