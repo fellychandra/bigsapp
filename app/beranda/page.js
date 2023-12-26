@@ -8,7 +8,7 @@ export default function Beranda() {
     return (
         <>
             <div className='px-4'>
-                <section>
+                <section className='pt-10'>
                     <Logo />
                     <Slider />
                 </section>
@@ -16,10 +16,10 @@ export default function Beranda() {
                     <div className='py-2'>
                         <div className='text-sm font-bold'>Menu</div>
                         <div className='grid grid-cols-2 gap-3  place-items-center justify-center py-[9px] px-2 sm:px-2 bg-white h-[213px] w-full shadow-custom rounded-[5px]'>
-                            <Menu style={'bg-pink1 h-[90.549px] w-full'} teks={"Poliklinik"} />
-                            <Menu style={'bg-pink2 h-[90.549px] w-full'} teks={"Info Layanan"} />
-                            <Menu style={'bg-primary h-[90.549px] w-full'} teks={"BMI"} />
-                            <Menu style={'bg-ungu1 h-[90.549px] w-full'} teks={"Kritik & Saran"} />
+                            <Menu style={'bg-pink1 h-[90.549px] w-full'} teks={"Poliklinik"} link={"/beranda/poliklinik"} />
+                            <Menu style={'bg-pink2 h-[90.549px] w-full'} teks={"Info Layanan"} link={"/beranda//info-layanan"} />
+                            <Menu style={'bg-primary h-[90.549px] w-full'} teks={"BMI"} link={"/beranda//bmi"}/>
+                            <Menu style={'bg-ungu1 h-[90.549px] w-full'} teks={"Kritik & Saran"} link={"/beranda//kritik-saran"} />
                         </div>
                     </div>
                 </section>

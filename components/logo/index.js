@@ -6,7 +6,7 @@ import logo from "@/public/assets/logo/logo.png"
 const Logo = () => {
     return (
         <>
-            <div className='flex justify-center pt-10'>
+            <div className='flex justify-center'>
                 <Image src={logo} height={140} width={140} alt='logo' />
             </div>
         </>

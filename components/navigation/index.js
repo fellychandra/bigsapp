@@ -6,8 +6,9 @@ import React from 'react';
 const Navigasi = () => {
     const pathName = usePathname();
     const isActive = (href) => {
-        return pathName === href ? 'text-primary fill-inherit' : 'text-abuabu';
+        return pathName.includes(href) ? 'text-primary fill-inherit' : 'text-abuabu';
     };
+    console.log(pathName);
 
     return (
         <div className='custom-shadow'>

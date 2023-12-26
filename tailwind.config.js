@@ -20,7 +20,8 @@ module.exports = {
         pink1: '#F4B1C9',
         pink2: '#F0A1DB',
         ungu1: '#B2AAE9',
-        abutext:'#757575'
+        abutext: '#757575',
+        primary1: '#2F455C'
       },
       boxShadow: {
         'custom': '0px 4px 4px 0px rgba(0, 0, 0, 0.15)',
