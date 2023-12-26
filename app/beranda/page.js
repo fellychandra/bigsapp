@@ -15,7 +15,7 @@ export default function Beranda() {
                 </section>
                 <section>
                     <div className='py-2'>
-                        <div className='text-base font-bold pb-1'>Menu</div>
+                        <div className='text-lg font-bold pb-1'>Menu</div>
                         <div className='grid grid-cols-2 gap-3  place-items-center justify-center py-[9px] px-2 sm:px-2 bg-white h-[213px] w-full shadow-custom rounded-[5px]'>
                             <Menu style={'bg-pink1 h-full w-full'} teks={"Poliklinik"} link={"/beranda/poliklinik"} />
                             <Menu style={'bg-pink2 h-full w-full'} teks={"Info Layanan"} link={"/beranda//info-layanan"} />
@@ -26,7 +26,7 @@ export default function Beranda() {
                 </section>
                 <section className='mb-14'>
                     <div className='py-2'>
-                        <div className='text-base font-bold pb-1'>Dokter Tersedia</div>
+                        <div className='text-lg font-bold pb-1'>Dokter Tersedia</div>
                         <div className='grid grid-cols-1 gap-3'>
                             <Card style={'bg-white h-[69px] w-full items-center'} data={""} />
                             <Card style={'bg-white h-[69px] w-full items-center'} data={""} />

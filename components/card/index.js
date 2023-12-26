@@ -14,16 +14,16 @@ const Card = ({ style, data }) => {
         <>
             <div className={`${style} grid grid-cols-1 p-[9px] shadow-custom rounded-[5px] cursor-pointer`}>
                 <div className="flex items-center">
-                    <div style={{ backgroundImage: `url(${slides[0].url})` }} className='rounded-full w-12 h-12 bg-center bg-cover flex justify-center'>
+                    <div style={{ backgroundImage: `url(${slides[0].url})` }} className='rounded-full w-14 h-14 bg-center bg-cover flex justify-center'>
                     </div>
                     <div className='items-center ml-2'>
-                        <div className='font-bold text-sm'>dr. Felly Chandra Ganteng Kali </div>
-                        <div className='text-abutext font-normal text-[12px]'>Klinik jaya abadi </div>
+                        <div className='font-bold text-base'>dr. Felly Chandra Ganteng Kali </div>
+                        <div className='text-abutext font-normal text-sm'>Klinik jaya abadi </div>
                     </div>
                 </div>
                 {
                     pathName.includes('dokter') && (
-                        <div className='flex justify-between pt-1'>
+                        <div className='flex justify-between pt-2'>
                             <div className='bg-primary1 p-1 rounded-[5px] font-normal text-[12px] text-white'>Lihat Jadwal</div>
                             <div className='bg-primary1 p-1 rounded-[5px] font-normal text-[12px] text-white'>Buat Janji</div>
                         </div>

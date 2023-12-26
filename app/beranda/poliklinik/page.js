@@ -9,7 +9,7 @@ const Poliklinik = () => {
     <>
       <div className='px-2'>
         <section className='mt-5'>
-          <Link href={'/beranda'} className='flex items-center p-1 font-bold text-base gap-1'>
+          <Link href={'/beranda'} className='flex items-center p-1 font-bold text-lg gap-1'>
             <CaretLeft size={18} weight='bold' />
             <div className=''>
               Poliklinik
