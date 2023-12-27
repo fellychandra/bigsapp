@@ -17,10 +17,9 @@ const queryClient = new QueryClient({
 function ReactQueryWrapper({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Suspense fallback={<Loading />}>
+
         {/* <Header /> */}
         {children}
-      </Suspense>
       <Navigasi />
     </QueryClientProvider>
   );

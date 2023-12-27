@@ -22,7 +22,7 @@ const Poliklinik = () => {
         </section>
         <section className='px-2'>
           <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2'>
-            <div className='grid grid-cols-2 gap-3 place-items-center justify-center overflow-y-auto scrollbar-hide' style={{ maxHeight: 'calc(100vh - 215px)' }} >
+            <div className='grid grid-cols-2 gap-3 place-items-center justify-center overflow-y-auto scrollbar-hide' style={{ maxHeight: 'calc(100vh - 230px)' }} >
               <Card data={""} />
               <Card data={""} />
               <Card data={""} />

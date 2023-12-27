@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Bigs App',
   description: 'Doctor Appointment App',
-  manifest: "./manifest.json",
+  manifest: "/manifest.json",
   icons: { apple: './icon.png' },
   themeColor: '#fff',
   viewport :'width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover'

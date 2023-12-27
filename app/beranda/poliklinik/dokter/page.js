@@ -21,7 +21,7 @@ const Dokter = () => {
                     <Search/>
                 </section>
                 <section className='px-2'>
-                    <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide' style={{ maxHeight: 'calc(100vh - 200px)' }} >
+                    <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide' style={{ maxHeight: 'calc(100vh - 210px)' }} >
                         <Card style={'bg-white h-full w-full items-center'} data={""} />
                         <Card style={'bg-white h-full w-full items-center'} data={""} />
                         <Card style={'bg-white h-full w-full items-center'} data={""} />
