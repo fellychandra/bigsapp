@@ -10,8 +10,13 @@ const Card = ({ data }) => {
     return (
         <>
             <Link href={'/beranda/poliklinik/dokter'} className='flex w-full h-[156px] p-2 bg-primary1/20 rounded-[5px] items-center justify-center cursor-pointer'>
-                <div className=''>
-                    Poliklinik
+                <div className='text-center'>
+                    <div className=''>
+                        <div style={{ backgroundImage: `url(${slides[0].url})` }} className='rounded-full w-14 h-14 bg-center bg-cover flex justify-center'></div>
+                    </div>
+                    <div>
+                        Nama
+                    </div>
                 </div>
             </Link>
         </>
