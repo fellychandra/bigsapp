@@ -31,7 +31,7 @@ const Poliklinik = () => {
           </Link>
         </section>
         <section className='m-2 mt-4'>
-          <Search />
+          <Search cari={'Poliklinik'} />
         </section>
         <section className='px-2'>
           <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2 mt-5'>

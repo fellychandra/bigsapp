@@ -19,7 +19,7 @@ const Dokter = () => {
                     </Link>
                 </section>
                 <section className='m-2 mt-4'>
-                    <Search />
+                    <Search cari={'Dokter'} />
                 </section>
                 <section className='px-2'>
                     <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 240px)' }} >
