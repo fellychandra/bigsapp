@@ -2,6 +2,7 @@
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
 import { Modal } from '@/components/modal/index';
+import { X } from '@phosphor-icons/react';
 
 const Card = ({ style, data }) => {
     const slides = [
@@ -10,8 +11,8 @@ const Card = ({ style, data }) => {
         { url: 'https://images.unsplash.com/photo-1682687219800-bba120d709c5?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
     ];
     const pathName = usePathname();
-    const [buatJanji, setBuatJanji] = useState(false);
-    const handleClose = () => setBuatJanji(false);
+    const [open, setOpen] = useState(false);
+    const handleClose = () => setOpen(false);
     return (
         <>
             <div className={`${style} grid grid-cols-1 p-[9px] transition-all shadow-custom rounded-[5px] cursor-pointer`}>
@@ -27,11 +28,51 @@ const Card = ({ style, data }) => {
                     pathName.includes('dokter') && (
                         <div className='flex justify-between pt-2'>
                             <div className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Lihat Jadwal</div>
-                            <div onClick={() => setBuatJanji(true)} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Buat Janji</div>
+                            <div onClick={() => setOpen(true)} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Buat Janji</div>
                         </div>
                     )
                 }
-                <Modal onClose={handleClose} visible={buatJanji} />
+
+                <Modal open={open} onClose={() => setOpen(false)}>
+                    <div className="flex flex-col gap-4">
+                        <div className="flex justify-between items-center pb-2 border-b-2">
+                            <div className="text-base">Dokter Anak</div>
+                            <X onClick={handleClose} size={24} weight="bold" />
+                        </div>
+                        <div className="grid grid-cols-1 gap-2 justify-between items-center pt-2">
+
+                            <div className="grid grid-cols-1 gap-1 text-sm">
+                                <div className="font-medium">Pilih Tanggal</div>
+                                <input
+                                    type="text"
+                                    className="w-full border border-abuabu rounded-md  p-1 focus:outline-none focus:border-primary1"
+                                    placeholder="Cari Poliklinik"
+                                />
+                            </div>
+                            <div className="grid grid-cols-1 gap-1 text-sm">
+                                <div className="font-medium">Pilih Jam Praktek</div>
+                                <input
+                                    type="text"
+                                    className="w-full border border-abuabu rounded-md  p-1 focus:outline-none focus:border-primary1"
+                                    placeholder="Cari Poliklinik"
+                                />
+                            </div>
+                            <div className="grid grid-cols-1 gap-1 text-sm">
+                                <div className="font-medium">Pilih Profil</div>
+                                <input
+                                    type="text"
+                                    className="w-full border border-abuabu rounded-md  p-1 focus:outline-none focus:border-primary1"
+                                    placeholder="Cari Poliklinik"
+                                />
+                            </div>
+                        </div>
+                        <div className="flex justify-end gap-2 items-center pt-3">
+                            <div onClick={handleClose} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Batal</div>
+                            <div className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Buat Janji</div>
+                        </div>
+                    </div>
+                </Modal>
+
 
             </div >
         </>

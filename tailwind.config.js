@@ -14,7 +14,7 @@ module.exports = {
       },
       colors: {
         bgF8F8FC: '#F8F8FC',
-        primary: '#10A7B0',
+        primary: '#1CA3AB',
         accentprimary: '#1CDFEA',
         abuabu: '#757575',
         pink1: '#F4B1C9',

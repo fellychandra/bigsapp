@@ -1,21 +1,17 @@
 import Link from 'next/link';
 import React from 'react'
+import Icon from '@/public/assets/icon/labor.png'
+import Image from 'next/image';
 
-const Card = ({ data }) => {
-    const slides = [
-        { url: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-        { url: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=1752&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-        { url: 'https://images.unsplash.com/photo-1682687219800-bba120d709c5?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-    ];
+const Card = ({ teks, icon }) => {
+
     return (
         <>
-            <Link href={'/beranda/poliklinik/dokter'} className='flex w-full h-[156px] p-2 bg-primary1/20 rounded-[5px] items-center justify-center cursor-pointer'>
-                <div className='text-center'>
-                    <div className=''>
-                        <div style={{ backgroundImage: `url(${slides[0].url})` }} className='rounded-full w-14 h-14 bg-center bg-cover flex justify-center'></div>
-                    </div>
-                    <div>
-                        Nama
+            <Link href={'/beranda/poliklinik/dokter'} className='w-full'>
+                <div className='flex w-full h-[156px] p-2 bg-white/20 rounded-[5px] items-center justify-center cursor-pointer border-[2px]'>
+                    <div className='flex flex-col items-center'>
+                        <Image src={Icon} height={80} width={80} alt='icon' className=''/>
+                        <div className='mt-2 text-center text-sm font-bold text-zinc-900'>{teks}</div>
                     </div>
                 </div>
             </Link>
