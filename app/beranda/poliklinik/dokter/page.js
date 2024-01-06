@@ -22,23 +22,23 @@ const Dokter = () => {
                     <Search cari={'Dokter'} />
                 </section>
                 <section className='px-2'>
-                    <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 240px)' }} >
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
-                        <Card style={'bg-white h-full w-full items-center'} data={""} />
+                    <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 225px)' }} >
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
+                        <Card data={""} />
                     </div>
                 </section>
             </div>
