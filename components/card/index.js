@@ -14,7 +14,9 @@ const Card = ({ data }) => {
     ];
     const pathName = usePathname();
     const [open, setOpen] = useState(false);
+    const [openJadwal, setOpenJadwal] = useState(false);
     const handleClose = () => setOpen(false);
+    const handleCloseJadwal = () => setOpenJadwal(false);
 
     const validDate = (current) => {
         // Mendapatkan tanggal hari ini
@@ -42,12 +44,65 @@ const Card = ({ data }) => {
                 {
                     pathName.includes('dokter') && (
                         <div className='flex justify-between pt-2'>
-                            <div className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Lihat Jadwal</div>
+                            <div onClick={() => setOpenJadwal(true)} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Lihat Jadwal</div>
                             <div onClick={() => setOpen(true)} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Buat Janji</div>
                         </div>
                     )
                 }
 
+                <Modal open={openJadwal} onClose={() => setOpenJadwal(false)}>
+                    <div className="flex flex-col gap-2">
+                        <div className="flex justify-between items-center pb-2 border-b-2">
+                            <div className="text-base">Dokter Anak</div>
+                            <X onClick={handleCloseJadwal} size={24} weight="bold" />
+                        </div>
+                        <div className="grid grid-cols-1 gap-2 justify-between items-center">
+                            <div className="grid grid-cols-1 gap-1 text-sm">
+                                <table>
+                                    <thead className='border'>
+                                        <tr>
+                                            <th>
+                                                Hari
+                                            </th>
+                                            <th>
+                                                Jam
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className='border text-center'>
+                                        <tr>
+                                            <td>
+                                                Senin
+                                            </td>
+                                            <td>
+                                                09.00 - 10.00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Selasa
+                                            </td>
+                                            <td>
+                                                09.00 - 10.00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Rabu
+                                            </td>
+                                            <td>
+                                                09.00 - 10.00
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div className="flex justify-end gap-2 items-center pt-3">
+                            <button onClick={handleCloseJadwal} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Tutup</button>
+                        </div>
+                    </div>
+                </Modal>
                 <Modal open={open} onClose={() => setOpen(false)}>
                     <div className="flex flex-col gap-2">
                         <div className="flex justify-between items-center pb-2 border-b-2">
@@ -58,15 +113,10 @@ const Card = ({ data }) => {
 
                             <div className="grid grid-cols-1 gap-1 text-sm">
                                 <div className="font-medium">Pilih Tanggal</div>
-                                {/* <input
-                                    type="text"
-                                    className="w-full border border-abuabu rounded-md  p-1 focus:outline-none focus:border-primary1"
-                                    placeholder="Cari Poliklinik"
-                                /> */}
                                 <div className='flex items-center w-full'>
                                     <div className='relative w-full'>
                                         <Datetime
-                                            isValidDate={validDate} // Menentukan validitas tanggal
+                                            isValidDate={validDate}
                                             value={''}
                                             className='w-full appearance-none focus:outline-none shadow border rounded-md p-1 border-abuabu'
                                             inputProps={{ style: { outline: 'none', width: '100%' }, placeholder: 'Pilih Tanggal' }}
@@ -81,15 +131,17 @@ const Card = ({ data }) => {
                             </div>
                             <div className="grid grid-cols-1 gap-1 text-sm">
                                 <div className="font-medium">Pilih Jam Praktek</div>
-                                <input
-                                    type="text"
-                                    className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1"
-                                    placeholder="Cari Poliklinik"
-                                />
+                                <select name="" className='w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1' id="">
+                                    <option value="" disabled selected>-- Pilih Jam Praktek Dokter --</option>
+                                    <option value="">10.00 - 12.00</option>
+                                    <option value="">12.00 - 13.00</option>
+                                    <option value="">13.00 - 14.00</option>
+                                </select>
                             </div>
                             <div className="grid grid-cols-1 gap-1 text-sm">
                                 <div className="font-medium">Pilih Profil</div>
                                 <select name="" className='w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1' id="">
+                                    <option value="" disabled selected>-- Pilih Profil --</option>
                                     <option value="">Felly Chandra</option>
                                     <option value="">Chandra Winata</option>
                                     <option value="">Chandra Felly</option>
