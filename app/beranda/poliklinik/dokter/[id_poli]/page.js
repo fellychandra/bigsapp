@@ -1,12 +1,18 @@
 'use client';
-import Card from '@/components/card'
+import Card from '@/components/card';
+import Loading from '@/components/loading';
 import { Search } from '@/components/search';
-import { CaretLeft } from '@phosphor-icons/react'
-import Link from 'next/link'
+import { GetDoctor } from '@/service/pendukung.servcie';
+import { CaretLeft } from '@phosphor-icons/react';
+import Link from 'next/link';
 import React from 'react'
 
-const Dokter = () => {
-    
+const DokterById = ({ params }) => {
+    const { data, isLoading, error } = GetDoctor(params.id_poli);
+    console.log(data?.data);
+    if (isLoading) {
+        return (<Loading />)
+    }
     return (
         <>
             <div className='bg-primary w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
@@ -24,7 +30,11 @@ const Dokter = () => {
                 </section>
                 <section className='px-2'>
                     <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 225px)' }} >
-                        <Card data={""} />
+                        {
+                            data?.data.map((item, index) =>
+                                <Card data={item} key={index} />
+                            )
+                        }
                     </div>
                 </section>
             </div>
@@ -32,4 +42,4 @@ const Dokter = () => {
     )
 }
 
-export default Dokter
+export default DokterById

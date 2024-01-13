@@ -1,23 +1,21 @@
 'use client';
-import Card from '@/components/card poliklinik/';
+import Loading from '@/components/loading';
 import { Search } from '@/components/search';
+import { GetPoly } from '@/service/pendukung.servcie';
 import { CaretLeft, CaretRight, DotOutline } from '@phosphor-icons/react'
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-const Poliklinik = () => {
 
-  const dummy = [
-    { teks: 'KLINIK ANAK' },
-    { teks: 'KLINIK UMUM' },
-    { teks: 'LABORATORIUM' },
-    { teks: 'KLINIK GIGI UMUM' },
-    { teks: 'KLINIK BEDAH UMUM' },
-    { teks: 'Laboratorium' },
-    { teks: 'Laboratorium' },
-    { teks: 'Laboratorium' },
-    { teks: 'Laboratorium' },
-  ];
+const Poliklinik = () => {
+  const { data, isLoading } = GetPoly();
+
+
+  if (isLoading) {
+    return (<Loading />)
+  }
+
   return (
     <>
       <div className='bg-primary w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
@@ -37,8 +35,16 @@ const Poliklinik = () => {
           <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2 mt-5'>
 
             <div className='grid grid-cols-2 gap-3 place-items-center justify-center overflow-y-auto scrollbar-hide' style={{ maxHeight: 'calc(100vh - 240px)' }} >
-              {dummy?.map((item, index) => (
-                <Card teks={item.teks} key={index} />
+              {data?.data?.map((item, index) => (
+                <Link href={`/beranda/poliklinik/dokter/${item.id_poli}`} className='w-full' key={index}>
+                  <div className='flex w-full h-[156px] p-2 bg-white/20 rounded-[5px] items-center justify-center cursor-pointer border-[2px]'>
+                    <div className='flex flex-col items-center'>
+                      <Image src={`data:imagepng;base64;${item.gambar}`} height={80} width={80} alt='icon' className='' />
+                      <div className='mt-2 text-center text-sm font-bold text-zinc-900'>{item?.poli}</div>
+                    </div>
+                  </div>
+                </Link>
+
               ))}
             </div>
           </div>

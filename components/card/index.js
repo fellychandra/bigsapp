@@ -5,13 +5,11 @@ import { Modal } from '@/components/modal/index';
 import { Calendar, X } from '@phosphor-icons/react';
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
+import Image from 'next/image';
 
 const Card = ({ data }) => {
-    const slides = [
-        { url: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-        { url: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=1752&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-        { url: 'https://images.unsplash.com/photo-1682687219800-bba120d709c5?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-    ];
+    console.log(data);
+
     const pathName = usePathname();
     const [open, setOpen] = useState(false);
     const [openJadwal, setOpenJadwal] = useState(false);
@@ -34,11 +32,10 @@ const Card = ({ data }) => {
         <>
             <div className={`bg-white h-full w-full items-center p-3 transition-all shadow-custom rounded-[5px] cursor-pointer`}>
                 <div className="flex items-center">
-                    <div style={{ backgroundImage: `url(${slides[0].url})` }} className='rounded-full w-14 h-14 bg-center bg-cover flex justify-center'>
-                    </div>
+                    <Image src={`data:imagepng;base64;${data.gambar}`} alt="gambar" height={50} width={50} className='rounded-full bg-center bg-cover flex justify-center'/>
                     <div className='items-center ml-2'>
-                        <div className='font-bold text-base'>dr. Felly Chandra Ganteng</div>
-                        <div className='text-abutext font-normal text-sm'>Klinik jaya abadi </div>
+                        <div className='font-bold text-base'>{data.nama_dokter}</div>
+                        <div className='text-abutext font-normal text-sm'>{data.poli} </div>
                     </div>
                 </div>
                 {

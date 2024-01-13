@@ -1,8 +1,7 @@
 'use client';
-import React, { ReactNode, Suspense } from 'react';
+import React from 'react';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import Navigasi from '@/components/navigation';
-import Loading from '@/components/loading';
 
 
 
