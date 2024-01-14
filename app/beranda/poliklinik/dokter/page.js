@@ -9,7 +9,8 @@ const Dokter = () => {
     
     return (
         <>
-            <div className='bg-primary w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
+        dokter saja lo
+            {/* <div className='bg-primary w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
             <div className='px-2'>
                 <section className='mt-5'>
                     <Link href={'/beranda/poliklinik'} className='flex items-center p-1 font-bold text-lg gap-1 text-white'>
@@ -27,7 +28,7 @@ const Dokter = () => {
                         <Card data={""} />
                     </div>
                 </section>
-            </div>
+            </div> */}
         </>
     )
 }
