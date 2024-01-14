@@ -5,11 +5,18 @@ import { Search } from '@/components/search';
 import { GetDoctor } from '@/service/pendukung.servcie';
 import { CaretLeft } from '@phosphor-icons/react';
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 
 const DokterById = ({ params }) => {
+    const [search, setSearch] = useState('')
     const { data, isLoading, error } = GetDoctor(params.id_poli);
-    console.log(data?.data);
+
+    const filterData = () => {
+        return data?.data?.filter((item) => {
+            return item.nama_dokter.toLowerCase().includes((search.toLowerCase()));
+        });
+    }
+
     if (isLoading) {
         return (<Loading />)
     }
@@ -26,13 +33,20 @@ const DokterById = ({ params }) => {
                     </Link>
                 </section>
                 <section className='m-2 mt-4'>
-                    <Search cari={'Dokter'} />
+                    <Search>
+                        <input
+                            type="text"
+                            className="w-full border border-abuabu rounded-md p-3 focus:outline-none focus:border-primary1"
+                            placeholder="Cari Dokter"
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                    </Search>
                 </section>
                 <section className='px-2'>
                     <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 225px)' }} >
                         {
-                            data?.data.map((item, index) =>
-                                <Card data={item} key={index} />
+                            filterData()?.map((item, index) =>
+                                <Card dataDokter={item} key={index} />
                             )
                         }
                     </div>

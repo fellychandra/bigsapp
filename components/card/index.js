@@ -6,9 +6,12 @@ import { Calendar, X } from '@phosphor-icons/react';
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
 import Image from 'next/image';
+import { GetJadwalDoctor } from '@/service/pendukung.servcie';
 
-const Card = ({ data }) => {
-    console.log(data);
+const Card = ({ dataDokter }) => {
+
+    // const [idDokter, setIdDokter] = useState();
+    // const [data, isLoading] = GetJadwalDoctor(idDokter);
 
     const pathName = usePathname();
     const [open, setOpen] = useState(false);
@@ -32,10 +35,10 @@ const Card = ({ data }) => {
         <>
             <div className={`bg-white h-full w-full items-center p-3 transition-all shadow-custom rounded-[5px] cursor-pointer`}>
                 <div className="flex items-center">
-                    <Image src={`data:imagepng;base64;${data.gambar}`} alt="gambar" height={50} width={50} className='rounded-full bg-center bg-cover flex justify-center'/>
+                    <Image src={`data:imagepng;base64;${dataDokter.gambar}`} alt="gambar" height={50} width={50} className='rounded-full bg-center bg-cover flex justify-center' />
                     <div className='items-center ml-2'>
-                        <div className='font-bold text-base'>{data.nama_dokter}</div>
-                        <div className='text-abutext font-normal text-sm'>{data.poli} </div>
+                        <div className='font-bold text-base'>{dataDokter.nama_dokter}</div>
+                        <div className='text-abutext font-normal text-sm'>{dataDokter.poli} </div>
                     </div>
                 </div>
                 {

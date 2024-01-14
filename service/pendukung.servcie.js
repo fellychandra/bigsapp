@@ -19,3 +19,12 @@ export const GetDoctor = (id_poli) => {
             ),
     });
 };
+export const GetJadwalDoctor = (id_dokter) => {
+    return useQuery({
+        queryKey: ['dokter', id_dokter],
+        queryFn: async () =>
+            await api.get(
+                `pwa-referensi/get-jadwal-dokter?id=${id_dokter}`
+            ),
+    });
+};

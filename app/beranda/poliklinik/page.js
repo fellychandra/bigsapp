@@ -5,12 +5,18 @@ import { GetPoly } from '@/service/pendukung.servcie';
 import { CaretLeft, CaretRight, DotOutline } from '@phosphor-icons/react'
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 
 
 const Poliklinik = () => {
+  const [search, setSearch] = useState('')
   const { data, isLoading } = GetPoly();
 
+  const filterData = () => {
+    return data?.data?.filter((item) => {
+      return item.poli.toLowerCase().includes((search.toLowerCase()));
+    });
+  }
 
   if (isLoading) {
     return (<Loading />)
@@ -29,13 +35,20 @@ const Poliklinik = () => {
           </Link>
         </section>
         <section className='m-2 mt-4'>
-          <Search cari={'Poliklinik'} />
+          <Search>
+            <input
+              type="text"
+              className="w-full border border-abuabu rounded-md p-3 focus:outline-none focus:border-primary1"
+              placeholder="Cari Poliklinik"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </Search>
         </section>
         <section className='px-2'>
           <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2 mt-5'>
 
             <div className='grid grid-cols-2 gap-3 place-items-center justify-center overflow-y-auto scrollbar-hide' style={{ maxHeight: 'calc(100vh - 240px)' }} >
-              {data?.data?.map((item, index) => (
+              {filterData()?.map((item, index) => (
                 <Link href={`/beranda/poliklinik/dokter/${item.id_poli}`} className='w-full' key={index}>
                   <div className='flex w-full h-[156px] p-2 bg-white/20 rounded-[5px] items-center justify-center cursor-pointer border-[2px]'>
                     <div className='flex flex-col items-center'>
@@ -44,7 +57,6 @@ const Poliklinik = () => {
                     </div>
                   </div>
                 </Link>
-
               ))}
             </div>
           </div>

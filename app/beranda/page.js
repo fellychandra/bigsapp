@@ -28,10 +28,10 @@ export default function Beranda() {
                     <div className='py-2'>
                         <div className='text-lg font-bold pb-1'>Dokter Tersedia</div>
                         <div className='grid grid-cols-1 gap-3'>
+                            {/* <Card style={'bg-white h-[69px] w-full items-center'} data={""} />
                             <Card style={'bg-white h-[69px] w-full items-center'} data={""} />
                             <Card style={'bg-white h-[69px] w-full items-center'} data={""} />
-                            <Card style={'bg-white h-[69px] w-full items-center'} data={""} />
-                            <Card style={'bg-white h-[69px] w-full items-center'} data={""} />
+                            <Card style={'bg-white h-[69px] w-full items-center'} data={""} /> */}
                         </div>
                     </div>
                 </section>
