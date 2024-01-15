@@ -38,7 +38,7 @@ const Poliklinik = () => {
           <Search>
             <input
               type="text"
-              className="w-full border border-abuabu rounded-md p-3 focus:outline-none focus:border-primary1"
+              className="w-full border border-abuabu rounded-md p-2 focus:outline-none focus:border-primary1"
               placeholder="Cari Poliklinik"
               onChange={(e) => setSearch(e.target.value)}
             />
