@@ -1,15 +1,12 @@
 'use client';
 import React, { useRef } from 'react'
+import { Form, Field } from 'react-final-form'
 
 const KritikDanSaran = () => {
   const textAreaRef = useRef(null);
 
-  const handleTextAreaChange = () => {
-    const textArea = textAreaRef.current;
-    if (textArea) {
-      textArea.style.height = 'auto';
-      textArea.style.height = `${textArea.scrollHeight}px`;
-    }
+  const onSubmit = (values) => {
+    console.log('Form submitted with values:', values);
   };
   return (
     <>
@@ -29,40 +26,43 @@ const KritikDanSaran = () => {
                 <div className="flex justify-between items-center pb-2 border-b-2">
                   <div className="text-base">Berikan Kritik dan Saran Anda</div>
                 </div>
-                <div className="grid grid-cols-1 gap-2 justify-between items-center">
-                  <div className="grid grid-cols-1 gap-1 text-sm">
-                    <div className="font-medium">Nama :</div>
-                    <input type="text" placeholder='Masukkan nama anda'
-                      className='w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1' />
-                  </div>
-                  <div className="grid grid-cols-1 gap-1 text-sm">
-                    <div className="font-medium">No. HP :</div>
-                    <input type="text"
-                      placeholder='Masukkan No. HP' className='w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1' />
-                  </div>
-                  <div className="grid grid-cols-1 gap-1 text-sm">
-                    <div className="font-medium">Perihal :</div>
-                    <select name="" className='w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1' id="">
-                      <option value="" disabled selected>-- Pilih Perihal --</option>
-                      <option value="">Bagian Pendaftaran</option>
-                      <option value="">Bagian Dokter (Pelayanan Medis)</option>
-                    </select>
-                  </div>
-                  <div className="grid grid-cols-1 gap-1 text-sm">
-                    <div className="font-medium">Ceritakan pengalaman anda :</div>
-                    <textarea
-                      ref={textAreaRef}
-                      className='w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1'
-                      onChange={handleTextAreaChange}
-                      id=""
-                      cols="30"
-                      rows="10"
-                      style={{ overflow: 'hidden' }}></textarea>
-                  </div>
-                  <div className="flex items-center pt-2">
-                    <button className='bg-primary1 p-1 w-full transition text-center rounded-[5px] font-normal text-[12px] text-white'>Hitung</button>
-                  </div>
-                </div>
+                <Form onSubmit={onSubmit} render={({ handleSubmit }) => (
+                  <form onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 gap-2 justify-between items-center">
+
+                      <div className="grid grid-cols-1 gap-1 text-sm">
+                        <div className="font-medium">Nama :</div>
+                        <Field name="nama" component={"input"} type='text' validate={''} placeholder='Masukkan nama anda' className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
+                      </div>
+                      <div className="grid grid-cols-1 gap-1 text-sm">
+                        <div className="font-medium">No. HP :</div>
+                        <Field name="noHp" component={"input"} type='text' validate={''} placeholder='Masukkan No. HP' className='w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1' />
+                      </div>
+                      <div className="grid grid-cols-1 gap-1 text-sm">
+                        <div className="font-medium">Perihal :</div>
+                        <Field name="layanan" component="select" validate={''} className='w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1' id="">
+                          <option value="--" defaultValue="true">-- Pilih Perihal --</option>
+                          <option value="---">Bagian Pendaftaran</option>
+                          <option value="----">Bagian Dokter (Pelayanan Medis)</option>
+                        </Field>
+                      </div>
+                      <div className="grid grid-cols-1 gap-1 text-sm">
+                        <div className="font-medium">Ceritakan pengalaman anda :</div>
+                        <Field
+                          name="catatan"
+                          component="textarea"
+                          type="textarea"
+                          validate={''}
+                          className='w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1'
+                        />
+                      </div>
+                      <div className="flex items-center pt-2">
+                        <button className='bg-primary1 p-2 w-full transition text-center rounded-[5px] font-normal text-[12px] text-white'>Kirim</button>
+                      </div>
+                    </div>
+                  </form>
+                )}
+                />
               </div>
             </div>
           </section>
