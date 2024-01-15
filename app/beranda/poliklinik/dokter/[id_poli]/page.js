@@ -63,7 +63,7 @@ const DokterById = ({ params }) => {
                     <Search>
                         <input
                             type="text"
-                            className="w-full border border-abuabu rounded-md p-3 focus:outline-none focus:border-primary1"
+                            className="w-full border border-abuabu rounded-md p-2 focus:outline-none focus:border-primary1"
                             placeholder="Cari Dokter"
                             onChange={(e) => setSearch(e.target.value)}
                         />

@@ -11,13 +11,13 @@ const Navigasi = () => {
 
     return (
         <div className='custom-shadow'>
-            <nav className="fixed bottom-0 left-0 right-0 bg-white h-16 pt-2">
+            <nav className="fixed bottom-0 left-0 right-0 bg-white h-14 pt-2">
                 <div className="max-w-7xl  mx-auto px-4">
                     <ul className="flex justify-around sm:">
                         <li className='text-center'>
                             <Link href="/beranda">
                                 <div className={`text-xs ${isActive('/beranda')} flex flex-col items-center justify-center`}>
-                                    <House size={29} />
+                                    <House size={27} />
                                     <h4>Beranda</h4>
                                 </div>
                             </Link>
@@ -25,7 +25,7 @@ const Navigasi = () => {
                         <li className='text-center justify-center'>
                             <Link href="/status-perjanjian">
                                 <div className={`text-xs ${isActive('/status-perjanjian')} flex flex-col items-center justify-center`}>
-                                    <ClipboardText size={29} />
+                                    <ClipboardText size={27} />
                                     <h4>Perjanjian</h4>
                                 </div>
                             </Link>
@@ -33,7 +33,7 @@ const Navigasi = () => {
                         <li className='text-center justify-center'>
                             <Link href="/riwayat">
                                 <div className={`text-xs ${isActive('/riwayat')} flex flex-col items-center justify-center`}>
-                                    <BookOpenText size={29} />
+                                    <BookOpenText size={27} />
                                     <h4>Riwayat</h4>
                                 </div>
                             </Link>
@@ -41,7 +41,7 @@ const Navigasi = () => {
                         <li className='text-center justify-center'>
                             <Link href="/profile">
                                 <div className={`text-xs ${isActive('/profile')} flex flex-col items-center justify-center`}>
-                                    <User size={29} />
+                                    <User size={27} />
                                     <h4>Profil</h4>
                                 </div>
                             </Link>
