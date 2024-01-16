@@ -29,6 +29,11 @@ module.exports = {
       screens: {
         'fold': '200px'
       },
+      fontSize: {
+        kecil: '0.7rem',
+        sedang: '0.75rem',
+        sedangdikit: '0.8rem'
+      }
     },
   },
   plugins: [],

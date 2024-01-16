@@ -10,14 +10,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
 import Datetime from 'react-datetime';
+import data from '@/service/dokter.json'
 
 const DokterById = ({ params }) => {
     const [search, setSearch] = useState('')
     const [idDokter, setIdDokter] = useState();
-    const { status, data, isError, isLoading, error } = GetDoctor(params.id_poli);
+    // const { status, data, isError, isLoading, error } = GetDoctor(params.id_poli);
 
     // const [data, isLoading] = GetJadwalDoctor(idDokter);
-    // console.log(error);
+    console.log(data);
 
     const pathName = usePathname()
     const [open, setOpen] = useState(false);
@@ -34,12 +35,12 @@ const DokterById = ({ params }) => {
         });
     }
 
-    if (isLoading) {
-        return (<Loading />)
-    }
-    if (isError) {
-        return <span>Error: {error.message}</span>
-    }
+    // if (isLoading) {
+    //     return (<Loading />)
+    // }
+    // if (isError) {
+    //     return <span>Error: {error.message}</span>
+    // }
 
     const validDate = (current) => {
         const currentDate = new Date();
@@ -52,7 +53,7 @@ const DokterById = ({ params }) => {
             <div className='bg-primary w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
             <div className='px-2'>
                 <section className='mt-5'>
-                    <Link href={'/beranda/poliklinik'} className='flex items-center p-1 font-bold text-lg gap-1 text-white'>
+                    <Link href={'/beranda/poliklinik'} className='flex items-center p-1 font-medium text-lg gap-1 text-white'>
                         <CaretLeft size={18} weight='bold' />
                         <div className=''>
                             Dokter
@@ -63,30 +64,34 @@ const DokterById = ({ params }) => {
                     <Search>
                         <input
                             type="text"
-                            className="w-full border border-abuabu rounded-md p-2 focus:outline-none focus:border-primary1"
+                            className="w-full border border-abuabu rounded-md p-1 focus:outline-none focus:border-primary1"
                             placeholder="Cari Dokter"
                             onChange={(e) => setSearch(e.target.value)}
                         />
                     </Search>
                 </section>
                 <section className='px-2'>
-                    <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 225px)' }} >
+                    <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 24vh)' }} >
                         {
                             filterData()?.map((item, index) =>
 
-                                <div key={index} className={`bg-white h-full w-full items-center p-3 transition-all shadow-custom rounded-[5px] cursor-pointer`}>
+                                <div key={index} className={`bg-white h-full w-full items-center p-2 transition-all shadow-custom rounded-[5px] cursor-pointer`}>
                                     <div className="flex items-center">
-                                        <Image src={`data:imagepng;base64;${item.gambar}`} alt="gambar" height={50} width={50} className='rounded-full bg-center bg-cover flex justify-center' />
+                                        <Image src={`data:imagepng;base64;${item.gambar}`} alt="gambar" height={40} width={40} className='rounded-full bg-center bg-cover flex justify-center' />
                                         <div className='items-center ml-2'>
-                                            <div className='font-bold text-base'>{item.nama_dokter}</div>
-                                            <div className='text-abutext font-normal text-sm'>{item.poli} </div>
+                                            <div className='font-medium text-sm'>{item.nama_dokter}</div>
+                                            <div className='text-abutext font-normal text-kecil'>
+                                                <span className='capitalize'>
+                                                    {(item.poli).toLowerCase()}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                     {
                                         pathName.includes('dokter') && (
                                             <div className='flex justify-between pt-2'>
-                                                <div onClick={() => setOpenJadwal(true)} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Lihat Jadwal</div>
-                                                <div onClick={() => setOpen(true)} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Buat Janji</div>
+                                                <div onClick={() => setOpenJadwal(true)} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-kecil text-white'>Lihat Jadwal</div>
+                                                <div onClick={() => setOpen(true)} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-kecil text-white'>Buat Janji</div>
                                             </div>
                                         )
                                     }

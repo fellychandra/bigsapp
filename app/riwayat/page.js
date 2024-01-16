@@ -30,7 +30,7 @@ export default function Riwayat() {
                             <div className='flex w-full h-[53px] bg-white rounded-[5px] items-center shadow-custom'>
                                 <form onChange={handleSubmit} className='w-full mx-2 text-abuabu font-normal text-sm'>
                                     <Field name='profil' component="select" validate={''}
-                                        className="w-full border border-abuabu rounded-md p-2 focus:outline-none focus:border-primary1">
+                                        className="w-full border border-abuabu rounded-md p-2 focus:outline-none focus:border-primary1 bg-white">
                                         <option value="--" defaultValue="true">-- Pilih Profil --</option>
                                         <option value="---">Felly Chandra</option>
                                         <option value="----">Chandra Felly</option>
@@ -45,20 +45,20 @@ export default function Riwayat() {
                     <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 210px)' }}>
                         <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2'>
                             <div className='text-sm flex justify-between items-center'>
-                                <div className='font-bold'>No. Booking : 109007872</div>
+                                <div className='font-medium'>No. Booking : 109007872</div>
                                 <div className='p-1 sm:mr-3 fold:mr-1 text-green-800 font-semibold rounded-[10px]'>Aktif</div>
                             </div>
-                            <div className='text-sm font-bold'>
+                            <div className='text-sm font-medium'>
                                 No. Antrian   : 1
                             </div>
-                            <div className='text-sm text-abuabu'>
+                            <div className='text-sedang text-abuabu'>
                                 Jum, 14 Okt 2024 08.10 - 12.00
                             </div>
-                            <div className='text-sm text-abuabu'>
+                            <div className='text-sedang text-abuabu'>
                                 dr Felly Chandra dr. Sp. A
                             </div>
-                            <div className="text-sm flex items-center justify-between text-abuabu">
-                                <div className='font-normal text-sm'>Dokter Spesialis Kegantengan</div>
+                            <div className="flex items-center justify-between text-abuabu">
+                                <div className='font-normal text-xs'>Dokter Spesialis Kegantengan</div>
                                 <div onClick={() => setOpenRiwayat(true)} className='bg-primary1 p-1 w-[6rem] flex justify-between items-center transition text-center rounded-[5px] font-normal text-[12px] text-white'>
                                     Lihat Detail
                                     <ArrowRight size={19} />
