@@ -56,51 +56,11 @@ export default function StatusLayanan() {
                                 dr Felly Chandra dr. Sp. A
                             </div>
                             <div className="text-sm flex items-center justify-between text-abuabu">
-                                <div className='font-normal text-sm'>Dokter Spesialis Kegantengan</div>
+                                <div className='font-normal text-xs'>Dokter Spesialis Kegantengan</div>
                                 <div className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Batalkan </div>
                             </div>
                         </div>
-                        <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2'>
-                            <div className='text-sm flex justify-between items-center'>
-                                <div className='font-bold'>No. Booking : 109007872</div>
-                                <div className='p-1 sm:mr-3 fold:mr-1 text-green-800 font-semibold rounded-[10px]'>Aktif</div>
-                            </div>
-                            <div className='text-sm font-bold'>
-                                No. Antrian   : 1
-                            </div>
-                            <div className='text-sm text-abuabu'>
-                                Jum, 14 Okt 2024 08.10 - 12.00
-                            </div>
-                            <div className='text-sm text-abuabu'>
-                                dr Felly Chandra dr. Sp. A
-                            </div>
-                            <div className="text-sm flex items-center justify-between text-abuabu">
-                                <div className='font-normal text-sm'>Dokter Spesialis Kegantengan</div>
-                                <div className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Batalkan </div>
-                            </div>
-                        </div>
-                        <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2'>
-                            <div className='text-sm flex justify-between items-center'>
-                                <div className='font-bold'>No. Booking : 109007872</div>
-                                <div className='p-1 sm:mr-3 fold:mr-1 text-green-800 font-semibold rounded-[10px]'>Aktif</div>
-                            </div>
-                            <div className='text-sm font-bold'>
-                                No. Antrian   : 1
-                            </div>
-                            <div className='text-sm text-abuabu'>
-                                Jum, 14 Okt 2024 08.10 - 12.00
-                            </div>
-                            <div className='text-sm text-abuabu'>
-                                dr Felly Chandra dr. Sp. A
-                            </div>
-                            <div className="text-sm flex items-center justify-between text-abuabu">
-                                <div className='font-normal text-sm'>Dokter Spesialis Kegantengan</div>
-                                <div className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Batalkan </div>
-                            </div>
-                        </div>
-
-
-
+                        
                     </div>
                 </section >
             </div >
