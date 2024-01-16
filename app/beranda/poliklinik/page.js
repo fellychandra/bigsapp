@@ -45,9 +45,9 @@ const Poliklinik = () => {
             />
           </Search>
         </section>
-        <section className='px-2'>
+        <section className='px-2 mb-16'>
           <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2 mt-5'>
-            <div className='grid grid-cols-2 gap-3 place-items-center justify-center overflow-y-auto scrollbar-hide' style={{ maxHeight: 'calc(100vh - 26vh)' }} >
+            <div className='grid grid-cols-2 gap-3 place-items-center justify-center overflow-y-auto scrollbar-hide' style={{ maxHeight: 'calc(100vh - 25.5vh)' }} >
               {filterData()?.map((item, index) => (
                 <Link href={`/beranda/poliklinik/dokter/${item.id_poli}`} className='w-full' key={index}>
                   <div className='flex w-full h-[156px] p-2 bg-white/20 rounded-[5px] items-center justify-center cursor-pointer border-[2px]'>
