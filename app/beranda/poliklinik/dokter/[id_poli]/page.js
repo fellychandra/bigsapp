@@ -1,6 +1,5 @@
 'use client';
-import Card from '@/components/card';
-import Loading from '@/components/loading';
+import { LoadingPage, LoadingJadwal } from '@/components/loading';
 import { Modal } from '@/components/modal';
 import { Search } from '@/components/search';
 import { GetDoctor, GetJadwalDoctor } from '@/service/pendukung.servcie';
@@ -10,24 +9,25 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
 import Datetime from 'react-datetime';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import data from '@/service/dokter.json'
+import Avatar from '@/public/assets/images/5s.png'
 
 const DokterById = ({ params }) => {
     const [search, setSearch] = useState('')
-    const [idDokter, setIdDokter] = useState();
-    // const { status, data, isError, isLoading, error } = GetDoctor(params.id_poli);
-
-    // const [data, isLoading] = GetJadwalDoctor(idDokter);
-    console.log(data);
-
-    const pathName = usePathname()
+    const [idDokter, setIdDokter] = useState('');
     const [open, setOpen] = useState(false);
     const [openJadwal, setOpenJadwal] = useState(false);
+
+    // const { data, isLoading } = GetDoctor(params.id_poli);
+
+    const { data: dataJadwalDokter, isLoading: isLoadingJadwal } = GetJadwalDoctor(idDokter);
+
+    const pathName = usePathname()
+
     const handleClose = () => setOpen(false);
     const handleCloseJadwal = () => setOpenJadwal(false);
-
-
-
 
     const filterData = () => {
         return data?.data?.filter((item) => {
@@ -36,10 +36,7 @@ const DokterById = ({ params }) => {
     }
 
     // if (isLoading) {
-    //     return (<Loading />)
-    // }
-    // if (isError) {
-    //     return <span>Error: {error.message}</span>
+    //     return (<LoadingPage />)
     // }
 
     const validDate = (current) => {
@@ -50,7 +47,7 @@ const DokterById = ({ params }) => {
 
     return (
         <>
-            <div className='bg-primary w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
+            <div className='bg-primary1 w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
             <div className='px-2'>
                 <section className='mt-5'>
                     <Link href={'/beranda/poliklinik'} className='flex items-center p-1 font-medium text-lg gap-1 text-white'>
@@ -71,13 +68,12 @@ const DokterById = ({ params }) => {
                     </Search>
                 </section>
                 <section className='px-2'>
-                    <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 24vh)' }} >
+                    <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5 h-full' style={{ maxHeight: 'calc(100vh - 24vh)' }} >
                         {
                             filterData()?.map((item, index) =>
-
                                 <div key={index} className={`bg-white h-full w-full items-center p-2 transition-all shadow-custom rounded-[5px] cursor-pointer`}>
                                     <div className="flex items-center">
-                                        <Image src={`data:imagepng;base64;${item.gambar}`} alt="gambar" height={40} width={40} className='rounded-full bg-center bg-cover flex justify-center' />
+                                        <Image src={item.gambar ? `data:imagepng;base64;${item.gambar}` : Avatar} alt="gambar" height={40} width={40} className='rounded-full bg-center bg-cover flex justify-center' />
                                         <div className='items-center ml-2'>
                                             <div className='font-medium text-sm'>{item.nama_dokter}</div>
                                             <div className='text-abutext font-normal text-kecil'>
@@ -89,8 +85,8 @@ const DokterById = ({ params }) => {
                                     </div>
                                     {
                                         pathName.includes('dokter') && (
-                                            <div className='flex justify-between pt-2'>
-                                                <div onClick={() => setOpenJadwal(true)} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-kecil text-white'>Lihat Jadwal</div>
+                                            <div className='flex justify-end gap-1'>
+                                                <div onClick={() => { setOpenJadwal(true); setIdDokter(item.id_dokter); }} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-kecil text-white'>Lihat Jadwal</div>
                                                 <div onClick={() => setOpen(true)} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-kecil text-white'>Buat Janji</div>
                                             </div>
                                         )
@@ -116,30 +112,19 @@ const DokterById = ({ params }) => {
                                                             </tr>
                                                         </thead>
                                                         <tbody className='border text-center'>
-                                                            <tr>
-                                                                <td>
-                                                                    Senin
-                                                                </td>
-                                                                <td>
-                                                                    09.00 - 10.00
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    Selasa
-                                                                </td>
-                                                                <td>
-                                                                    09.00 - 10.00
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    Rabu
-                                                                </td>
-                                                                <td>
-                                                                    09.00 - 10.00
-                                                                </td>
-                                                            </tr>
+                                                            {isLoadingJadwal && <LoadingJadwal />}
+                                                            {
+                                                                dataJadwalDokter?.data?.map((item, index) => (
+                                                                    <tr key={index}>
+                                                                        <td>
+                                                                            {item.hari}
+                                                                        </td>
+                                                                        <td>
+                                                                            {item.jam_mulai}
+                                                                        </td>
+                                                                    </tr>
+                                                                ))
+                                                            }
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -204,8 +189,8 @@ const DokterById = ({ params }) => {
                             )
                         }
                     </div>
-                </section>
-            </div>
+                </section >
+            </div >
         </>
     )
 }

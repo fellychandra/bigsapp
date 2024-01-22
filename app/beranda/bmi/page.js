@@ -21,7 +21,7 @@ const Bmi = () => {
 
   return (
     <>
-      <div className='bg-primary w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
+      <div className='bg-primary1 w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
       <div className='px-2'>
         <section className='mt-5'>
           <div className='flex items-center p-1 font-bold text-lg gap-1 text-white'>

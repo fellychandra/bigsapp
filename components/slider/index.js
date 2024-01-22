@@ -1,5 +1,6 @@
 'use client';
 import { CaretLeft, CaretRight, DotOutline } from '@phosphor-icons/react'
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
 
@@ -35,8 +36,9 @@ const Slider = () => {
 
 
     return (
-        <div className='h-[200px] w-full m-auto py-3 relative group'>
-            <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} className='w-full h-full rounded-2xl bg-center bg-cover duration-500'></div>
+        <div className='h-[200px] w-full m-auto py-3 my-3 relative group'>
+            <Image src={slides[currentIndex].url} layout='fill' objectFit='cover' alt='gambar' loading='eager' className='rounded-2xl bg-center bg-cover duration-500'/>
+            {/* <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} loading="lazy" className='w-full h-full rounded-2xl bg-center bg-cover duration-500'></div> */}
             <div className='hidden group-hover:block absolute top-[100px] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
                 <CaretLeft onClick={prevSlide} size={32} />
             </div>

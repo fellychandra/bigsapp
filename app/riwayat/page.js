@@ -1,6 +1,6 @@
 'use client';
 import { Modal } from "@/components/modal";
-import { ArrowRight, CaretLeft, X } from "@phosphor-icons/react";
+import { ArrowRight, X } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useState } from "react";
 import { Field, Form } from "react-final-form";
@@ -14,11 +14,10 @@ export default function Riwayat() {
     };
     return (
         <>
-            <div className='bg-primary w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
+            <div className='bg-primary1 w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
             <div className='px-2'>
                 <section className='mt-5'>
                     <Link href={'/beranda'} className='flex items-center p-1 font-bold text-lg gap-1 text-white'>
-                        {/* <CaretLeft size={18} weight='bold' /> */}
                         <div className='ml-1'>
                             Riwayat Appointment
                         </div>

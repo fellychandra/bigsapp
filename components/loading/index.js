@@ -1,9 +1,5 @@
-import React from 'react'
+import LoadingJadwal from "./loading_jadwal";
+import LoadingPage from "./loading_page";
 
-export default function Loading() {
-    return (
-        <div className="flex flex-col w-full h-screen items-center justify-center z-10 text-cyan-800">
-            Loading...
-        </div>
-    )
-}
+
+export { LoadingPage, LoadingJadwal }

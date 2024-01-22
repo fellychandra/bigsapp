@@ -18,7 +18,8 @@
     "react-datetime": "^3.2.0",
     "react-dom": "^18",
     "react-final-form": "^6.5.9",
-    "react-loading-skeleton": "^3.3.1"
+    "react-loading-skeleton": "^3.3.1",
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
     "autoprefixer": "^10",

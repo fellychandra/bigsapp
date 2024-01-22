@@ -7,7 +7,7 @@ const Logo = () => {
     return (
         <>
             <div className='flex justify-center'>
-                <Image src={logo} height={140} width={140} alt='logo' />
+                <Image src={logo} loading='lazy' height={140} width={140} alt='logo' />
             </div>
         </>
     )

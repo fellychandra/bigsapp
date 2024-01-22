@@ -1,5 +1,4 @@
 'use client';
-import Card from '@/components/card'
 import Logo from '@/components/logo'
 import Menu from '@/components/menu'
 import Slider from '@/components/slider'
