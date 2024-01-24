@@ -37,15 +37,14 @@ export default function Riwayat() {
                                 </form>
                             </div>
                         </div>
-                    )}
-                    />
+                    )} />
                 </section>
                 <section className='px-2'>
                     <div className='grid grid-cols-1 gap-3 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 210px)' }}>
                         <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2'>
                             <div className='text-sm flex justify-between items-center'>
                                 <div className='font-medium'>No. Booking : 109007872</div>
-                                <div className='p-1 sm:mr-3 fold:mr-1 text-green-800 font-semibold rounded-[10px]'>Aktif</div>
+                                <div className='p-1 sm:mr-3 fold:mr-1 text-red-800 font-semibold rounded-[10px]'>Aktif</div>
                             </div>
                             <div className='text-sm font-medium'>
                                 No. Antrian   : 1

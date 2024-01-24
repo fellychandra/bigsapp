@@ -18,7 +18,6 @@ export default function Profile() {
       <div className='px-2'>
         <section className='mt-5'>
           <Link href={'/beranda'} className='flex items-center p-1 font-bold text-lg gap-1 text-white'>
-            {/* <CaretLeft size={18} weight='bold' /> */}
             <div className='ml-1'>
               Profile Pasien
             </div>
@@ -38,22 +37,21 @@ export default function Profile() {
         </section>
         <section className='px-2'>
           <div className='grid grid-cols-1 gap-2 overflow-y-auto scrollbar-hide mt-5' style={{ maxHeight: 'calc(100vh - 210px)' }}>
-            <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2'>
-
-              <div className='text-sm flex justify-between items-center'>
-                <div>
-                  <div className='font-medium'>Nama Pasien</div>
-                  <div className='text-kecil font-normal'>1384566926554*****</div>
-                </div>
-                <div className='p-1'>
-                  <div className="rounded-full p-1 bg-abuabu/20 cursor-pointer">
-                    <CaretRight size={16} />
+            <Link href={`/profile/id`}>
+              <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2'>
+                <div className='text-sm flex justify-between items-center'>
+                  <div className="">
+                    <div className='font-medium'>Nama Pasien</div>
+                    <div className='text-kecil font-normal'>1384566926554*****</div>
+                  </div>
+                  <div className='p-1'>
+                    <div className="rounded-full p-1 bg-abuabu/20 cursor-pointer">
+                      <CaretRight size={16} />
+                    </div>
                   </div>
                 </div>
               </div>
-
-            </div>
-
+            </Link>
           </div>
         </section >
       </div >
