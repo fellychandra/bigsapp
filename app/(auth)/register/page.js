@@ -3,6 +3,7 @@ import Logo from '@/components/logo';
 import Image from 'next/image';
 import React, { useState } from 'react'
 import Ilustrasi from '@/public/assets/images/daftar.png'
+import Link from 'next/link';
 
 function Register() {
     const [nik, setNIK] = useState('');
@@ -70,7 +71,6 @@ function Register() {
                                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
                             />
                         </div>
-                        <div className='text-kecil cursor-pointer text-right underline text-sky-600'>Lupa Password?</div>
                         <div className="mt-3">
                             <button
                                 type="button"
@@ -80,7 +80,9 @@ function Register() {
                                 Daftar
                             </button>
                         </div>
-                        <div className='text-center text-kecil cursor-pointer underline text-sky-600 p-3'>Belum Punya Akun? Daftar!</div>
+                        <div className='text-center text-kecil cursor-pointer underline text-sky-600 p-3'>
+                            <Link href={'/login'}>Sudah Punya Akun? Masuk!</Link>
+                        </div>
                     </form>
                 </div>
             </div>

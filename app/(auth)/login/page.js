@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import Ilustrasi from '@/public/assets/images/login.png'
 import Logo from '@/components/logo';
+import Link from 'next/link';
 
 
 function Login() {
@@ -45,7 +46,11 @@ function Login() {
                                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500"
                             />
                         </div>
-                        <div className='text-kecil cursor-pointer text-right underline text-sky-600'>Lupa Password?</div>
+                        <div className='text-kecil cursor-pointer text-right underline text-sky-600'>
+                            <Link href={'forgot-password'}>
+                                Lupa Password?
+                            </Link>
+                        </div>
                         <div className="mt-3">
                             <button
                                 type="button"
@@ -55,7 +60,9 @@ function Login() {
                                 Masuk
                             </button>
                         </div>
-                        <div className='text-center text-kecil cursor-pointer underline text-sky-600 p-3'>Belum Punya Akun? Daftar!</div>
+                        <div className='text-center text-kecil cursor-pointer underline text-sky-600 p-3'>
+                            <Link href={'/register'}>Belum Punya Akun? Daftar!</Link>
+                        </div>
                     </form>
                 </div>
             </div>

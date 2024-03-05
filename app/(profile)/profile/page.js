@@ -28,9 +28,11 @@ export default function Profile() {
             <div className="w-full p-2">
               <div className="">
                 <p className="text-kecil text-abuabu">Tekan tombol berikut untuk menambahkan profil : </p>
-                <button className="p-1 text-sm bg-primary1 w-full rounded-lg text-white">
-                  Tambahkan Profil
-                </button>
+                <Link href={'/tambah-profil'}>
+                  <div className="p-1 text-sm text-center bg-primary1 w-full rounded-lg text-white">
+                    Tambahkan Profil
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

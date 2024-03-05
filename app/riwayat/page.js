@@ -44,7 +44,7 @@ export default function Riwayat() {
                         <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-2'>
                             <div className='text-sm flex justify-between items-center'>
                                 <div className='font-medium'>No. Booking : 109007872</div>
-                                <div className='p-1 sm:mr-3 fold:mr-1 text-red-800 font-semibold rounded-[10px]'>Aktif</div>
+                                <div className='p-1 sm:mr-3 fold:mr-1 text-green-800 font-semibold rounded-[10px]'>Selesai</div>
                             </div>
                             <div className='text-sm font-medium'>
                                 No. Antrian   : 1
@@ -57,12 +57,12 @@ export default function Riwayat() {
                             </div>
                             <div className="flex items-center justify-between text-abuabu">
                                 <div className='font-normal text-xs'>Dokter Spesialis Kegantengan</div>
-                                <div onClick={() => setOpenRiwayat(true)} className='bg-primary1 p-1 w-[6rem] flex justify-between items-center transition text-center rounded-[5px] font-normal text-[12px] text-white'>
+                                <Link href={`/riwayat/id`} className='bg-primary1 p-1 w-[6rem] flex justify-between items-center transition text-center rounded-[5px] font-normal text-[12px] text-white'>
                                     Lihat Detail
                                     <ArrowRight size={19} />
-                                </div>
+                                </Link>
                             </div>
-                            <Modal open={openRiwayat} onClose={''}>
+                            {/* <Modal open={openRiwayat} onClose={''}>
                                 <div className="flex flex-col gap-2">
                                     <div className="flex justify-between items-center pb-2 border-b-2">
                                         <div className="text-base">Riwayat Medis</div>
@@ -70,108 +70,124 @@ export default function Riwayat() {
                                     </div>
                                     <div className="grid grid-cols-1 gap-2 justify-between items-center max-h-[75vh] overflow-y-auto">
                                         <div className="grid grid-cols-1 gap-1 text-sm">
-                                            Catatan Tanda Vital :
-                                            <Form onSubmit={onSubmit} render={({ }) => (
-                                                <div className="border p-2">
-                                                    <div className="">
+                                            <div className="border p-2">
+                                                <div className="border p-2 grid gap-2">
+                                                    <div className="border-b">
+                                                        Keluhan :
+                                                    </div>
+                                                    <div>
+                                                        nyeri sendi mantab jiwa
+                                                    </div>
+                                                </div>
+                                                <div className="border p-2 grid gap-2">
+                                                    <div className="border-b">
+                                                        Observasi :
+                                                    </div>
+                                                    <div className="grid grid-cols-2 gap-1">
                                                         <div className="pb-1">Tinggi Badan :
-                                                            <Field name="tb" component={"input"} type='text' validate={''} className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
+                                                            <div>
+                                                                167 cm
+                                                            </div>
                                                         </div>
                                                         <div className="pb-1">berat Badan :
-                                                            <Field name="tb" component={"input"} type='text' validate={''} className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
+                                                            <div>
+                                                                56 kg
+                                                            </div>
                                                         </div>
                                                         <div className="pb-1">
                                                             BMI
-                                                            <Field name="tb" component={"input"} type='text' validate={''} className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
+                                                            <div>
+                                                                24.5 || Normal
+                                                            </div>
                                                         </div>
                                                         <div className="pb-1">
                                                             Tekanan Darah
-                                                            <Field name="tb" component={"input"} type='text' validate={''} className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
-
+                                                            <div>
+                                                                110/15
+                                                            </div>
                                                         </div>
                                                         <div className="pb-1">
                                                             Suhu
-                                                            <Field name="tb" component={"input"} type='text' validate={''} className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
-
+                                                            <div>
+                                                                39%
+                                                            </div>
                                                         </div>
                                                         <div className="pb-1">
                                                             Pernafasan
-                                                            <Field name="tb" component={"input"} type='text' validate={''} className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
-
+                                                            <div>
+                                                                normal
+                                                            </div>
                                                         </div>
                                                         <div className="pb-1">
                                                             Denyut Nadi
-                                                            <Field name="tb" component={"input"} type='text' validate={''} className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
-
+                                                            <div>
+                                                                60/detik
+                                                            </div>
                                                         </div>
                                                         <div className="pb-1">
                                                             Lingkar Kepala
-                                                            <Field name="tb" component={"input"} type='text' validate={''} className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
-
+                                                            <div>
+                                                                Normal
+                                                            </div>
                                                         </div>
                                                         <div className="pb-1">
                                                             Sistole
-                                                            <Field name="tb" component={"input"} type='text' validate={''} className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
-
+                                                            <div>
+                                                                Normal
+                                                            </div>
                                                         </div>
                                                         <div className="pb-1">
                                                             GDS
-                                                            <Field name="tb" component={"input"} type='text' validate={''} className="w-full border border-abuabu rounded-md shadow p-1 focus:outline-none focus:border-primary1" />
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="grid grid-cols-2 gap-2">
-                                                        <div className="border p-2">Subject :
                                                             <div>
-                                                                nyeri sendi mantab jiwa
-                                                            </div>
-                                                        </div>
-                                                        <div className="border p-2">Object :
-                                                            <div>
-                                                                nyeri sendi mantab jiwa
-                                                            </div>
-                                                        </div>
-                                                        <div className="border p-2">Diagnosa :
-                                                            <div>
-                                                                nyeri sendi mantab jiwa
-                                                            </div>
-                                                        </div>
-                                                        <div className="border p-2">Edukasi :
-                                                            <div>
-                                                                nyeri sendi mantab jiwa
-                                                            </div>
-                                                        </div>
-                                                        <div className="border p-2">Obat :
-                                                            <div>
-                                                                nyeri sendi mantab jiwa
-                                                            </div>
-                                                        </div>
-                                                        <div className="border p-2">Obat Manual :
-                                                            <div>
-                                                                nyeri sendi mantab jiwa
-                                                            </div>
-                                                        </div>
-                                                        <div className="border p-2">ALKES :
-                                                            <div>
-                                                                nyeri sendi mantab jiwa
-                                                            </div>
-                                                        </div>
-                                                        <div className="border p-2">Tindakan Dll :
-                                                            <div>
-                                                                nyeri sendi mantab jiwa
+                                                                Normal
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            )} />
+                                                <div className="border p-2 grid gap-2">
+                                                    <div className="border-b">Diagnosa :</div>
+                                                    <div className="grid grid-cols-2 gap-1">
+                                                        <div className="pb-1">Premier:
+                                                            <div>
+                                                                sakit demam berdarah
+                                                            </div>
+                                                        </div>
+                                                        <div className="pb-1">Sekunder :
+                                                            <div>
+                                                                asdfasdfadf
+                                                            </div>
+                                                            <div>
+                                                                asdfasdfadf
+                                                            </div>
+                                                            <div>
+                                                                asdfasdfadf
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="border p-2 grid gap-2"><div className="border-b">
+                                                    Resep Obat :
+                                                </div>
+                                                    <div>
+                                                        nyeri sendi mantab jiwa
+                                                    </div>
+                                                </div>
+                                                <div className="border p-2 grid gap-2">
+                                                    <div className="border-b">
+                                                        Tindakan :
+                                                    </div>
+                                                    <div>
+                                                        nyeri sendi mantab jiwa
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="flex justify-end gap-2 items-center pt-3">
                                         <button onClick={handleCloseRiwayat} className='bg-primary1 p-1 w-[5rem] transition text-center rounded-[5px] font-normal text-[12px] text-white'>Tutup</button>
                                     </div>
                                 </div>
-                            </Modal>
+                            </Modal> */}
                         </div>
                     </div>
                 </section >

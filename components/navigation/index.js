@@ -3,10 +3,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
+
 const Navigasi = () => {
     const pathName = usePathname();
     const isActive = (href) => {
-        return pathName.includes(href) ? 'text-primary1 fill-inherit' : 'text-abuabu';
+        return pathName === href ? 'text-primary1 fill-inherit' : 'text-abuabu';
     };
 
     return (
@@ -15,8 +16,8 @@ const Navigasi = () => {
                 <div className="max-w-7xl  mx-auto px-4">
                     <ul className="flex justify-around sm:">
                         <li className='text-center'>
-                            <Link href="/beranda">
-                                <div className={`text-kecil ${isActive('/beranda')} flex flex-col items-center justify-center`}>
+                            <Link href="/">
+                                <div className={`text-kecil ${isActive('/')} flex flex-col items-center justify-center`}>
                                     <House size={24} />
                                     <h4>Beranda</h4>
                                 </div>

@@ -11,7 +11,7 @@ import React, { useState } from 'react'
 import Datetime from 'react-datetime';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import data from '@/service/dokter.json'
+// import data from '@/service/dokter.json'
 import Avatar from '@/public/assets/images/5s.png'
 
 const DokterById = ({ params }) => {
@@ -20,7 +20,7 @@ const DokterById = ({ params }) => {
     const [open, setOpen] = useState(false);
     const [openJadwal, setOpenJadwal] = useState(false);
 
-    // const { data, isLoading } = GetDoctor(params.id_poli);
+    const { data, isLoading } = GetDoctor(params.id_poli);
 
     const { data: dataJadwalDokter, isLoading: isLoadingJadwal } = GetJadwalDoctor(idDokter);
 
@@ -35,9 +35,9 @@ const DokterById = ({ params }) => {
         });
     }
 
-    // if (isLoading) {
-    //     return (<LoadingPage />)
-    // }
+    if (isLoading) {
+        return (<LoadingPage />)
+    }
 
     const validDate = (current) => {
         const currentDate = new Date();
@@ -50,7 +50,7 @@ const DokterById = ({ params }) => {
             <div className='bg-primary1 w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
             <div className='px-2'>
                 <section className='mt-5'>
-                    <Link href={'/beranda/poliklinik'} className='flex items-center p-1 font-medium text-lg gap-1 text-white'>
+                    <Link href={'/poliklinik'} className='flex items-center p-1 font-medium text-lg gap-1 text-white'>
                         <CaretLeft size={18} weight='bold' />
                         <div className=''>
                             Dokter
