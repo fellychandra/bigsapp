@@ -30,7 +30,7 @@ export default function Profile() {
                 <p className="text-kecil text-abuabu">Tekan tombol berikut untuk menambahkan profil : </p>
                 <Link href={'/tambah-profil'}>
                   <div className="p-1 text-sm text-center bg-primary1 w-full rounded-lg text-white">
-                    Tambahkan Profil
+                    Tambah / Tautkan Profil Pasien
                   </div>
                 </Link>
               </div>

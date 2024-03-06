@@ -2,7 +2,6 @@
 import { CaretLeft, X } from '@phosphor-icons/react'
 import Link from 'next/link';
 import React from 'react'
-import { Field, Form } from 'react-final-form';
 
 const DetailRiwayat = ({ params }) => {
   console.log(params);
@@ -11,10 +10,10 @@ const DetailRiwayat = ({ params }) => {
       <div className='bg-primary1 w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
       <div className='px-2'>
         <section className='mt-5'>
-          <Link href={'/'} className='flex items-center p-1 font-bold text-lg gap-1 text-white'>
+          <Link href={'/riwayat'} className='flex items-center p-1 font-bold text-lg gap-1 text-white'>
             <CaretLeft size={18} weight='bold' />
             <div className=''>
-              Riwayat Pelayanan
+              Riwayat Medis
             </div>
           </Link>
         </section>
@@ -135,9 +134,6 @@ const DetailRiwayat = ({ params }) => {
           </div>
         </section>
       </div >
-
-
-
     </>
   )
 }

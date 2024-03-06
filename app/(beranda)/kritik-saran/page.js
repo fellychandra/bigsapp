@@ -1,4 +1,6 @@
 'use client';
+import { CaretLeft } from '@phosphor-icons/react';
+import Link from 'next/link';
 import React, { useRef } from 'react'
 import { Form, Field } from 'react-final-form'
 
@@ -14,11 +16,12 @@ const KritikDanSaran = () => {
         <div className='bg-primary1 w-full h-[200px] -z-10 absolute top-0 left-0 right-0'></div>
         <div className='px-2'>
           <section className='mt-5'>
-            <div className='flex items-center p-1 font-bold text-lg gap-1 text-white'>
-              <div className='pl-1'>
+            <Link href={'/'} className='flex items-center p-1 font-bold text-lg gap-1 text-white'>
+              <CaretLeft size={18} weight='bold' />
+              <div className=''>
                 Kritik dan Saran
               </div>
-            </div>
+            </Link>
           </section>
           <section className='m-2 mt-4'>
             <div className='w-full h-full bg-white rounded-[5px] shadow-custom p-3 mt-5'>

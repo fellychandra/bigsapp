@@ -6,8 +6,6 @@ import { useState } from "react";
 import { Field, Form } from "react-final-form";
 
 export default function Riwayat() {
-    const [openRiwayat, setOpenRiwayat] = useState(false);
-    const handleCloseRiwayat = () => setOpenRiwayat(false);
 
     const onSubmit = (values) => {
         console.log('Form submitted with values:', values);
